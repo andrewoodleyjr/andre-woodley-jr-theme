@@ -1,0 +1,489 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent; }
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block; }
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img,
+object,
+embed {
+  max-width: 100%; }
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll; }
+
+/* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+th {
+  font-weight: bold;
+  vertical-align: bottom; }
+
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+.ie6 input {
+  vertical-align: text-bottom; }
+
+select, input, textarea {
+  font: 99% sans-serif; }
+
+table {
+  font-size: inherit;
+  font: 100%; }
+
+small {
+  font-size: 85%; }
+
+strong {
+  font-weight: bold; }
+
+td, td img {
+  vertical-align: top; }
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0; }
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible; }
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both; }
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Helvetica, san-serif;
+  color: #fefefe;
+  background-color: #000; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1; }
+
+h1 {
+  font-size: 5.62em; }
+
+h2 {
+  font-size: 4.21em; }
+
+h3 {
+  font-size: 3.16em; }
+
+h4 {
+  font-size: 1.78em; }
+
+h5 {
+  font-size: 1.33em; }
+
+h6 {
+  font-size: 1.25em; }
+
+p {
+  font-size: 1em; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  a, a:visited {
+    color: #2b6cc2; }
+
+form textarea, form input[type=text], form input[type=password] {
+  font-size: 1em;
+  padding: 0.4em 0.4em 0.3em;
+  line-height: 1;
+  border: 1px solid #ddd; }
+
+form input[type=checkbox] {
+  vertical-align: baseline; }
+
+form input[type='submit'] {
+  border: 1px solid #ddd;
+  background-color: #fefefe;
+  padding: 0.4em 1em 0.3em;
+  transition: background-color 0.25s;
+  border-radius: 1px; }
+
+form input[type='submit']:hover {
+  background-color: #efefef; }
+
+body {
+  margin: auto;
+  width: 1200px;
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative; }
+
+body > * {
+  max-width: 100%; }
+
+body > .posthaven-user-menu {
+  position: absolute;
+  right: 0;
+  padding: 0.3em; }
+  body > .posthaven-user-menu a {
+    display: inline-block;
+    margin-left: 0.25em; }
+
+body > header {
+  width: 100%;
+  margin-bottom: 3em; }
+  body > header h1 {
+    margin-top: 0.5em; }
+  body > header h3 {
+    margin: 0.25em 0 0.75em;
+    font-size: 1.25em; }
+  body > header nav {
+    margin-top: 0.25em; }
+    body > header nav li {
+      font-size: 1.33em;
+      display: inline-block;
+      margin-right: 1em; }
+      body > header nav li a {
+        font-weight: bold; }
+
+body > main {
+  width: 800px; }
+  body > main h2 {
+    font-size: 3.16em;
+    margin-bottom: 0.25em; }
+
+body > aside.sidebar {
+  width: 300px;
+  padding-left: 100px; }
+  body > aside.sidebar section {
+    margin-bottom: 3em; }
+    body > aside.sidebar section h1 {
+      font-size: 1.33em;
+      font-weight: bold;
+      margin-bottom: 0.33em; }
+    body > aside.sidebar section ul {
+      list-style: disc;
+      padding-left: 1em; }
+  body > aside.sidebar .posthaven-subscribe-form span {
+    display: none; }
+  body > aside.sidebar section.archive a, body > aside.sidebar section.subscribe a {
+    font-weight: bold; }
+  body > aside.sidebar section.archive form {
+    margin-bottom: 0.4em; }
+    body > aside.sidebar section.archive form input {
+      width: 100%; }
+
+body > footer {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center; }
+
+@media screen and (max-width: 1199px) {
+  body {
+    padding: 1em; }
+  body > main, body > aside.sidebar {
+    margin-top: 2em;
+    width: 100%; }
+  body > aside.sidebar {
+    padding-left: 0; } }
+
+article.post, article.page {
+  max-width: 100%; }
+  article.post figure, article.page figure {
+    margin-bottom: 1em; }
+  article.post header, article.page header {
+    position: relative; }
+    article.post header .private-indicator, article.page header .private-indicator {
+      position: absolute;
+      top: 0;
+      right: 0; }
+    article.post header h1.title, article.page header h1.title {
+      font-size: 3.16em;
+      margin-bottom: 0.5em; }
+  article.post div.body, article.page div.body {
+    margin-bottom: 1.5em; }
+    article.post div.body h1, article.post div.body h2, article.post div.body h3, article.post div.body p, article.post div.body ul, article.post div.body ol, article.page div.body h1, article.page div.body h2, article.page div.body h3, article.page div.body p, article.page div.body ul, article.page div.body ol {
+      margin-bottom: 0.5em; }
+    article.post div.body h1, article.post div.body h2, article.post div.body h3, article.page div.body h1, article.page div.body h2, article.page div.body h3 {
+      font-weight: bold; }
+    article.post div.body h1, article.page div.body h1 {
+      font-size: 1.78em; }
+    article.post div.body h2, article.page div.body h2 {
+      font-size: 1.33em; }
+    article.post div.body h3, article.page div.body h3 {
+      font-size: 1.25em; }
+    article.post div.body b, article.post div.body strong, article.page div.body b, article.page div.body strong {
+      font-weight: bold; }
+    article.post div.body ul, article.post div.body ol, article.page div.body ul, article.page div.body ol {
+      padding-left: 2em; }
+    article.post div.body p, article.page div.body p {
+      margin: 0 0 1em 0; }
+    article.post div.body blockquote, article.page div.body blockquote {
+      margin-left: 1em;
+      border-left: 0.125em solid #ddd;
+      padding-left: 0.875em; }
+    article.post div.body table, article.page div.body table {
+      width: 100%; }
+      article.post div.body table, article.post div.body table th, article.post div.body table td, article.page div.body table, article.page div.body table th, article.page div.body table td {
+        border-top: 1px solid #ddd; }
+      article.post div.body table th, article.post div.body table td, article.page div.body table th, article.page div.body table td {
+        padding: 0.33em; }
+  article.post footer, article.page footer {
+    margin-bottom: 1.5em; }
+    article.post footer div.details, article.page footer div.details {
+      margin-bottom: 0.75em;
+      font-size: 0.9em; }
+    article.post footer div.tags, article.page footer div.tags {
+      font-size: 0.9em;
+      margin-bottom: 1em; }
+      article.post footer div.tags li, article.page footer div.tags li {
+        display: inline-block; }
+
+footer.post-responses .responses {
+  margin-bottom: 2em; }
+  footer.post-responses .responses .response {
+    margin: 2em 0; }
+    footer.post-responses .responses .response .byline {
+      margin-top: 0.25em;
+      font-size: 0.7em; }
+    footer.post-responses .responses .response ul, footer.post-responses .responses .response ol {
+      padding-left: 1em; }
+    footer.post-responses .responses .response ul {
+      list-style: disc; }
+    footer.post-responses .responses .response blockquote {
+      padding-left: 0.9em;
+      border-left: 0.1em #ddd; }
+  footer.post-responses .responses table {
+    width: 100%; }
+    footer.post-responses .responses table, footer.post-responses .responses table th, footer.post-responses .responses table td {
+      border-top: 1px solid #ddd; }
+    footer.post-responses .responses table th, footer.post-responses .responses table td {
+      padding: 0.33em; }
+
+footer.post-responses .new-comment {
+  margin: 1em 0 2em; }
+
+section.posts article.post {
+  margin-bottom: 6em; }
+  section.posts article.post header h1.title {
+    font-size: 1.78em; }
+
+footer.pagination li {
+  display: inline-block;
+  margin-right: 0.25em; }
+  footer.pagination li a {
+    font-size: 0.9em;
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 0.5em 1em; }
+  footer.pagination li.active a {
+    color: inherit; }
+    footer.pagination li.active a:hover {
+      text-decoration: none; }
+
+main > section.archive {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap; }
+  main > section.archive h2 {
+    width: 100%; }
+  main > section.archive .archive-months {
+    width: 200px;
+    margin-bottom: 1em; }
+    main > section.archive .archive-months ul {
+      list-style: disc;
+      padding-left: 1em; }
+    main > section.archive .archive-months .archive-all-dates {
+      margin-top: 0.5em;
+      font-size: 0.9em; }
+    main > section.archive .archive-months .posthaven-archive-selected a {
+      color: inherit; }
+  main > section.archive .archive-results {
+    max-width: 600px;
+    flex: 1; }
+    main > section.archive .archive-results form, main > section.archive .archive-results input {
+      margin-bottom: 0.75em;
+      width: 100%; }
+    main > section.archive .archive-results li {
+      margin-bottom: 0.5em; }
+      main > section.archive .archive-results li .archive-date {
+        font-size: 0.8em; }
+  main > section.archive .archive-pagination {
+    margin-top: 0.25em;
+    font-size: 0.9em; }
+    main > section.archive .archive-pagination a {
+      display: inline-block;
+      margin-right: 0.5em; }
+
+.private-password main p {
+  margin-bottom: 0.5em; }
+
+.posthaven-comment-form .posthaven-field {
+  margin: 0.75em 0; }
+  .posthaven-comment-form .posthaven-field label {
+    display: block;
+    margin-bottom: 0.25em; }
+  .posthaven-comment-form .posthaven-field textarea, .posthaven-comment-form .posthaven-field input[type=text] {
+    max-width: 95%;
+    width: 34em; }
+  .posthaven-comment-form .posthaven-field input[type=checkbox] {
+    vertical-align: baseline;
+    margin-right: 0.25em; }
+  .posthaven-comment-form .posthaven-field.posthaven-comment-notify-field label {
+    display: inline; }
+
+.posthaven-comment-form .posthaven-comment-verification {
+  width: 34em;
+  margin-bottom: 0.75em; }
+
+.posthaven-share-links .posthaven-share-item {
+  display: inline-block;
+  margin-right: 1em; }
+
+.posthaven-share-links .posthaven-twitter-share {
+  margin-right: 1.33em; }
+
+.posthaven-private-form .posthaven-field {
+  display: inline-block;
+  margin-right: 0.25em; }

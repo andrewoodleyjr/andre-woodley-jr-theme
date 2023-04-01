@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class='no-js'>
+  <head>
+    <title>{{ request.page_title }}</title>
+
+    <meta content='width=device-width,initial-scale=1' name='viewport'>
+    <link href="{{ 'images/favicon.ico' | asset_url }}" rel='shortcut icon' type='image/x-icon'>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {{ 'blog.css' | asset_url | stylesheet_tag }}
+
+    {{ posthaven.includes_for_head }}
+  </head>
+
+  <body class="private-password">
+    <header>
+      <h1>Private Site</h1>
+    </header>
+    <main>
+      <p>This site is private and password-protected. Please enter your password to continue.</p>
+      {% form 'private' %}
+    </main>
+
+    {{ posthaven.includes_for_body }}
+  </body>
+</html>

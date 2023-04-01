@@ -1,0 +1,19 @@
+{% if site.tags.size > 0 %}
+  <section>
+    <h1>Tags</h1>
+    <ul>
+      {% for t in site.tags limit:10 %}
+        <li class="{{ t.url | text_if_current}}">
+          <a href="{{ t.url }}">{{ t.name }}</a>
+          <span class="tag-count">{{ t.post_count }}</span>
+        </li>
+      {% endfor %}
+
+      {% if site.tags.size > 10 %}
+        <li>
+          <a href="{{ site.tags_url }}">See all {{ site.tags.size }} tags</a>
+        </li>
+      {% endif %}
+    </ul>
+  </section>
+{% endif %}

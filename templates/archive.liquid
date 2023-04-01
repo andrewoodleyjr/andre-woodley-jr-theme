@@ -1,0 +1,37 @@
+<section class="archive">
+  <h2>Archive</h2>
+
+  <div class="archive-months">
+    <ul>
+      {% archive_months %}
+        <li>
+          <a href={{ month.url }}>{{ month.date }}</a> ({{ month.count }})
+        </li>
+      {% endarchive_months %}
+    </ul>
+    <div class="archive-all-dates">{{ archive.all_dates_link }}</div>
+  </div>
+
+  <div class="archive-results">
+    {% form 'archive' %}
+    <ul>
+      {% archive_results %}
+        <li class="archive-entry">
+          <a href="{{ result.url }}">
+            <span>{{ result.title }}</span>
+          </a>
+          <div class="search-highlight">
+            {{ result.snippet }}
+          </div>
+          <div class="archive-date">
+            {{ result.date }}
+          </div>
+        </li>
+      {% endarchive_results %}
+    </ul>
+
+    <div class="archive-pagination">
+      {{ archive.pagination }}
+    </div>
+  </div>
+</section>

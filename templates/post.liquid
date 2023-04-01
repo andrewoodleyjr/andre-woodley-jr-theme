@@ -1,0 +1,27 @@
+{% include 'post' %}
+
+<footer class="post-responses">
+  {% if post.response_count > 0 %}
+    <div class="responses">
+      <h4>{{ post.response_count | pluralize: 'Response' }}</h4>
+      {% for response in post.responses %}
+        {% include 'response' %}
+      {% endfor %}
+      {% if post.anon_upvote_count > 0 %}
+        <div class="response">
+          <div class="upvote">
+            {{ post.anon_upvote_count | pluralize: 'visitor' }}
+            upvoted this post.
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if site.comments_enabled? %}
+    <div class="new-comment">
+      <h4>Comment</h4>
+      {% form 'comment' %}
+    </div>
+  {% endif %}
+</footer>

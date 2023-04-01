@@ -1,0 +1,16 @@
+{% unless site.blogroll == empty %}
+  {% for menu in site.blogroll %}
+    {% unless menu.items == empty %}
+      <section class="blogroll">
+          <h1>{{ menu.title }}</h1>
+          <ul>
+            {% for menu_item in menu.items %}
+              <li class="menu-item {{ menu_item.url | text_if_current}}">
+                <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+      </section>
+    {% endunless %}
+  {% endfor %}
+{% endunless %}

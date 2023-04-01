@@ -1,0 +1,8 @@
+---
+name:
+author:
+url:
+posts_per_page:
+  include_in_settings: false
+  default: 10
+settings:

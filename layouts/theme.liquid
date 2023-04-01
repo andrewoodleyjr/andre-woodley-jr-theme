@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class='no-js'>
+  <head>
+    <title>{{ request.page_title }}</title>
+
+    <meta content='width=device-width,initial-scale=1' name='viewport'>
+
+    {% comment %}
+      This provides Posthaven built meta description, Facebook Open Graph and Twitter Card
+      <meta> tags.
+    {% endcomment %}
+    {{ meta_tags }}
+
+    <link href="{{ 'images/favicon.ico' | asset_url }}" rel='shortcut icon' type='image/x-icon'>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {{ 'blog.css' | asset_url | stylesheet_tag }}
+
+    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
+    {{ posthaven.includes_for_head }}
+  </head>
+
+  <body class='site-{{ site.id }}'>
+    {{ posthaven.user_menu }}
+
+    <header>
+      {% include 'alerts' %}
+
+      <h1>
+        <a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
+      </h1>
+
+      {% unless site.description == empty %}
+        <h3>{{ site.description | smarty_pants }}</h3>
+      {% endunless %}
+
+      {% include 'nav_menu' %}
+    </header>
+
+
+    <main>
+      {{ content_for_layout }}
+    </main>
+
+    <aside class="sidebar">
+      {% include 'bio' %}
+
+      <section class="archive">
+        <h1>Archive</h1>
+        {% form 'archive' %}
+        <a href="{{ site.archive_url }}">Browse the archive</a>
+      </section>
+
+      {% include 'contributors' %}
+
+      {% if site.subscription_enabled? %}
+        <section class="subscribe">
+          <h1>Subscribe</h1>
+
+          {% form 'subscribe' include_prompt:true %}
+
+          <a href="{{ site.feed_url }}">Subscribe to the feed</a>
+        </section>
+      {% endif %}
+
+      {% include 'blogroll' %}
+      {% include 'tags' %}
+    </aside>
+
+    <footer>
+      Built with <a href="https://posthaven.com/">Posthaven, blogging forever.</a>
+    </footer>
+
+    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
+    {{ posthaven.includes_for_body }}
+  </body>
+</html>

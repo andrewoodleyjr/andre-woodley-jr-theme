@@ -1,0 +1,511 @@
+@import 'reset';
+
+// ----------------------------------------------------------
+// General
+// ----------------------------------------------------------
+
+body {
+ font-size: 16px;
+ line-height:1.5;
+ font-family: Helvetica, san-serif;
+ color: #fefefe;
+ background-color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 5.62em;
+}
+h2 {
+  font-size: 4.21em;
+}
+h3 {
+  font-size: 3.16em;
+}
+h4 {
+  font-size: 1.78em;
+}
+h5 {
+  font-size: 1.33em;
+}
+h6 {
+  font-size: 1.25em;
+}
+p {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &, &:visited {
+    color: #2b6cc2;
+  }
+}
+
+form {
+  textarea, input[type=text], input[type=password] {
+    font-size: 1em;
+    padding: 0.4em 0.4em 0.3em;
+    line-height: 1;
+    border: 1px solid #ddd;
+  }
+
+  input[type=checkbox] {
+    vertical-align: baseline;
+  }
+
+  input[type='submit'] {
+    border: 1px solid #ddd;
+    background-color: #fefefe;
+    padding: 0.4em 1em 0.3em;
+    transition: background-color 0.25s;
+    border-radius: 1px;
+  }
+  input[type='submit']:hover {
+    background-color: #efefef;
+  }
+}
+
+// ----------------------------------------------------------
+// Layout
+// ----------------------------------------------------------
+
+body {
+  margin: auto;
+  width: 1200px;
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+body > * {
+  max-width: 100%;
+}
+
+body > .posthaven-user-menu {
+  position: absolute;
+  right: 0;
+  padding: 0.3em;
+
+  a {
+    display: inline-block;
+    margin-left: 0.25em;
+  }
+}
+
+body > header {
+  width: 100%;
+  margin-bottom: 3em;
+
+  h1 {
+    margin-top: 0.5em;
+  }
+
+  h3 {
+    margin: 0.25em 0 0.75em;
+    font-size: 1.25em;
+  }
+
+  nav {
+    margin-top: 0.25em;
+
+    li {
+      font-size: 1.33em;
+      display: inline-block;
+      margin-right: 1em;
+
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+body > main {
+  width: 800px;
+
+  h2 {
+    font-size: 3.16em;
+    margin-bottom: 0.25em;
+  }
+}
+body > aside.sidebar {
+  width: 300px;
+  padding-left: 100px;
+
+  section {
+    margin-bottom: 3em;
+
+    h1 {
+      font-size: 1.33em;
+      font-weight: bold;
+      margin-bottom: 0.33em;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1em;
+    }
+  }
+
+  .posthaven-subscribe-form span {
+    display: none;
+  }
+
+  section.archive, section.subscribe {
+    a {
+      font-weight: bold;
+    }
+  }
+
+  section.archive {
+    form {
+      margin-bottom: 0.4em;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+body > footer {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 1199px) {
+  body {
+    padding: 1em;
+  }
+  body > main, body > aside.sidebar {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  body > aside.sidebar {
+    padding-left: 0;
+  }
+}
+
+// ----------------------------------------------------------
+// Posts
+// ----------------------------------------------------------
+
+article.post, article.page {
+  max-width: 100%;
+
+  figure {
+    margin-bottom: 1em;
+  }
+
+  header {
+    position: relative;
+
+    .private-indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    h1.title {
+      font-size: 3.16em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  div.body {
+    margin-bottom: 1.5em;
+
+    h1, h2, h3, p, ul, ol {
+      margin-bottom: 0.5em;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 1.78em;
+    }
+    h2 {
+      font-size: 1.33em;
+    }
+    h3 {
+      font-size: 1.25em;
+    }
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    ul, ol {
+      padding-left: 2em;
+    }
+
+    ul {
+    }
+    ol {
+    }
+
+    p {
+      margin: 0 0 1em 0;
+    }
+
+    blockquote {
+      margin-left: 1em;
+      border-left: 0.125em solid #ddd;
+      padding-left: 0.875em;
+    }
+    table {
+      width: 100%;
+
+      &, th, td {
+        border-top: 1px solid #ddd;
+      }
+      th, td {
+        padding: 0.33em;
+      }
+    }
+  }
+
+  footer {
+    margin-bottom: 1.5em;
+
+    div.details {
+      margin-bottom: 0.75em;
+      font-size: 0.9em;
+    }
+
+    div.tags {
+      font-size: 0.9em;
+      margin-bottom: 1em;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+footer.post-responses {
+  .responses {
+    margin-bottom: 2em;
+
+    .response {
+      margin: 2em 0;
+
+      .byline {
+        margin-top: 0.25em;
+        font-size: 0.7em;
+      }
+
+      ul, ol {
+        padding-left: 1em;
+      }
+      ul {
+        list-style: disc;
+      }
+      blockquote {
+        padding-left: 0.9em;
+        border-left: 0.1em #ddd;
+      }
+    }
+
+    table {
+      width: 100%;
+
+      &, th, td {
+        border-top: 1px solid #ddd;
+      }
+      th, td {
+        padding: 0.33em;
+      }
+    }
+  }
+
+  .new-comment {
+    margin: 1em 0 2em;
+  }
+}
+
+section.posts article.post {
+  margin-bottom: 6em;
+
+  header {
+    h1.title {
+      font-size: 1.78em;
+    }
+  }
+}
+
+footer.pagination {
+  li {
+    display: inline-block;
+    margin-right: 0.25em;
+
+    a {
+      font-size: 0.9em;
+      display: inline-block;
+      border: 1px solid #ddd;
+      padding: 0.5em 1em;
+    }
+
+    &.active a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------
+// Archive Page
+// ----------------------------------------------------------
+
+main > section.archive {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+
+  h2 {
+    width: 100%;
+  }
+
+  .archive-months {
+    width: 200px;
+    margin-bottom: 1em;
+    ul {
+      list-style: disc;
+      padding-left: 1em;
+    }
+
+    .archive-all-dates {
+      margin-top: 0.5em;
+      font-size: 0.9em;
+    }
+
+    .posthaven-archive-selected a {
+      color: inherit;
+    }
+  }
+
+  .archive-results {
+    max-width: 600px;
+    flex: 1;
+
+    form, input {
+      margin-bottom: 0.75em;
+      width: 100%;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+
+      .archive-date {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .archive-pagination {
+    margin-top: 0.25em;
+    font-size: 0.9em;
+
+    a {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+// ----------------------------------------------------------
+// Password Page
+// ----------------------------------------------------------
+
+.private-password {
+  main p {
+    margin-bottom: 0.5em;
+  }
+}
+
+// ----------------------------------------------------------
+// Posthaven Internals
+// ----------------------------------------------------------
+
+.posthaven-subscribe-form {
+}
+
+.posthaven-share-links {
+  .posthaven-share-item {
+  }
+  .posthvaven-upvote {
+  }
+  .posthave-twitter-share {
+  }
+  .posthaven-facebook-share {
+  }
+}
+
+.posthaven-comment-form {
+  .posthaven-comment-add-url {
+  }
+
+  .posthaven-field {
+    margin: 0.75em 0;
+
+    label {
+      display: block;
+      margin-bottom: 0.25em;
+    }
+
+    textarea, input[type=text] {
+      max-width: 95%;
+      width: 34em;
+    }
+
+    input[type=checkbox] {
+      vertical-align: baseline;
+      margin-right: 0.25em;
+    }
+
+    &.posthaven-comment-notify-field {
+      label {
+        display: inline;
+      }
+    }
+  }
+
+  .posthaven-comment-verification {
+    width: 34em;
+    margin-bottom: 0.75em;
+  }
+}
+
+.posthaven-share-links {
+  .posthaven-share-item {
+    display: inline-block;
+    margin-right: 1em;
+  }
+
+  .posthaven-twitter-share {
+    margin-right: 1.33em;
+  }
+}
+
+.posthaven-private-form {
+  .posthaven-field {
+    display: inline-block;
+    margin-right: 0.25em;
+  }
+}
