@@ -46,12 +46,14 @@
         </span>
       {% endif %}
 
+      <!-- 
       {% if post.url.current_page? %}
         |
         <span class="view-count">
           {{ post | view_count: 'page view' }}
         </span>
       {% endif %}
+      -->
     </div>
     {% unless post.tags == empty %}
       <div class="tags">
