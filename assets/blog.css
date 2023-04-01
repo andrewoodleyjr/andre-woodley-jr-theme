@@ -237,17 +237,14 @@ form textarea, form input[type=text], form input[type=password] {
   padding: 0.4em 0.4em 0.3em;
   line-height: 1;
   border: 1px solid #ddd; }
-
 form input[type=checkbox] {
   vertical-align: baseline; }
-
 form input[type='submit'] {
   border: 1px solid #ddd;
   background-color: #fefefe;
   padding: 0.4em 1em 0.3em;
   transition: background-color 0.25s;
   border-radius: 1px; }
-
 form input[type='submit']:hover {
   background-color: #efefef; }
 
@@ -325,12 +322,13 @@ body > footer {
 @media screen and (max-width: 1199px) {
   body {
     padding: 1em; }
+
   body > main, body > aside.sidebar {
     margin-top: 2em;
     width: 100%; }
+
   body > aside.sidebar {
     padding-left: 0; } }
-
 article.post, article.page {
   max-width: 100%; }
   article.post figure, article.page figure {
@@ -403,7 +401,6 @@ footer.post-responses .responses {
       border-top: 1px solid #ddd; }
     footer.post-responses .responses table th, footer.post-responses .responses table td {
       padding: 0.33em; }
-
 footer.post-responses .new-comment {
   margin: 1em 0 2em; }
 
@@ -475,7 +472,6 @@ main > section.archive {
     margin-right: 0.25em; }
   .posthaven-comment-form .posthaven-field.posthaven-comment-notify-field label {
     display: inline; }
-
 .posthaven-comment-form .posthaven-comment-verification {
   width: 34em;
   margin-bottom: 0.75em; }
@@ -483,7 +479,6 @@ main > section.archive {
 .posthaven-share-links .posthaven-share-item {
   display: inline-block;
   margin-right: 1em; }
-
 .posthaven-share-links .posthaven-twitter-share {
   margin-right: 1.33em; }
 
