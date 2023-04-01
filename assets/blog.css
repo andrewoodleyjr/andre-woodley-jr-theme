@@ -230,7 +230,7 @@ a {
   a:hover {
     text-decoration: underline; }
   a, a:visited {
-    color: #2b6cc2; }
+    color: #ddd; }
 
 form textarea, form input[type=text], form input[type=password] {
   font-size: 1em;
