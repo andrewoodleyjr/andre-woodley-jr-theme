@@ -23,7 +23,6 @@
   </head>
 
   <body class='site-{{ site.id }}'>
-    {{ posthaven.user_menu }}
 
     <header>
       {% include 'alerts' %}
@@ -44,6 +43,7 @@
       {{ content_for_layout }}
     </main>
 
+    <!--
     <aside class="sidebar">
       {% include 'bio' %}
 
@@ -68,9 +68,11 @@
       {% include 'blogroll' %}
       {% include 'tags' %}
     </aside>
+    -->
 
     <footer>
-      <p class="paragraph">© Copyright {{ "now" | date: "%Y" }}<br>All Rights Reserved.</p>
+      {{ posthaven.user_menu }}
+      <p class="paragraph">© Copyright {{ "now" | date: "%Y" }}<br>All Rights Reserved</p>
     </footer>
 
     {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
