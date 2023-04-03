@@ -281,6 +281,8 @@ body > header {
       font-size: 1em;
       display: inline-block;
       margin-right: 1em; }
+      body > header nav li:last-child {
+        margin-right: 0; }
       body > header nav li a {
         font-weight: normal; }
 

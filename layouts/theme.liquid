@@ -55,7 +55,6 @@
       color: var(--text-color) !important;
     }
 
-
     {% if settings.user_system_dark_light_mode %}
       @media(prefers-color-scheme: dark) {
         body {
@@ -120,7 +119,7 @@
       {{ settings.contact }}
     </p>
     <!-- {{ posthaven.user_menu }} -->
-    <p class="paragraph">© 2022 {{ "now" | date: "%Y" }}<br>All Rights Reserved</p>
+    <p class="paragraph">© 2022 {{ "now" | date: "%Y" }}</p>
   </footer>
 
   {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}

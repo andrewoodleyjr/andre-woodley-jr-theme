@@ -125,6 +125,11 @@ body > header {
       font-size: 1em;
       display: inline-block;
       margin-right: 1em;
+      
+      &:last-child {
+        // styles for the last child of a nested li element
+        margin-right: 0;
+      }
 
       a {
         font-weight: normal;
@@ -717,5 +722,3 @@ main > section.archive {
     margin-right: 0.25em;
   }
 }
-
-
