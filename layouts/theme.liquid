@@ -89,32 +89,7 @@
     {{ content_for_layout }}
   </main>
 
-  <!--
-  <aside class="sidebar">
-  {% include 'bio' %}
-
-  <section class="archive">
-  <h1>Archive</h1>
-  {% form 'archive' %}
-  <a href="{{ site.archive_url }}">Browse the archive</a>
-  </section>
-
-  {% include 'contributors' %}
-
-  {% if site.subscription_enabled? %}
-  <section class="subscribe">
-  <h1>Subscribe</h1>
-
-  {% form 'subscribe' include_prompt:true %}
-
-  <a href="{{ site.feed_url }}">Subscribe to the feed</a>
-  </section>
-  {% endif %}
-
-  {% include 'blogroll' %}
-  {% include 'tags' %}
-  </aside>
-  --><footer>
+  <footer>
     <p class="paragraph left">
       {{ settings.contact }}
     </p>
