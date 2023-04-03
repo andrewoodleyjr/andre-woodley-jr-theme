@@ -6,76 +6,123 @@
     <meta content='width=device-width,initial-scale=1' name='viewport'>
 
     {% comment %}
-      This provides Posthaven built meta description, Facebook Open Graph and Twitter Card
-      <meta> tags.
+    This provides Posthaven built meta description, Facebook Open Graph and Twitter Card
+    <meta> tags.
     {% endcomment %}
     {{ meta_tags }}
 
-    <link href="{{ 'images/favicon.ico' | asset_url }}" rel='shortcut icon' type='image/x-icon'>
+    <link
+    href="{{ 'images/favicon.ico' | asset_url }}"
+      rel='shortcut icon'
+      type='image/x-icon'>
     <!--[if IE]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     {{ 'blog.css' | asset_url | stylesheet_tag }}
 
     {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
     {{ posthaven.includes_for_head }}
-  </head>
 
-  <body class='site-{{ site.id }}'>
+    {% if settings.background_color %}
+      <style>
+        body {
+          background-color: {{ settings.background_color }}
+           !important;
+        }
+      </style>
+    {% endif %}
 
-    <header>
-      {% include 'alerts' %}
 
+
+    <style > :root
+    {
+      /* Light mode colors */
+      --bg-color: {{ settings.light_color }}
+      ;
+      --text-color: {{ settings.dark_color }}
+      ;
+
+      /* Dark mode colors */
+      --bg-color-dark: {{ settings.dark_color }}
+      ;
+      --text-color-dark: {{ settings.light_color }}
+      ;
+    }
+
+    body {
+      background-color: var(--bg-color) !important;
+      color: var(--text-color) !important;
+    }
+
+
+    {% if settings.user_system_dark_light_mode %}
+      @media(prefers-color-scheme: dark) {
+        body {
+          background-color: var(--bg-color-dark) !important;
+          color: var(--text-color-dark) !important;
+        }
+      }
+    {% endif %}
+  </style>
+</head>
+
+<body class='site-{{ site.id }}'>
+
+  <header>
+    {% include 'alerts' %}
+
+    <div>
       <h1>
-        <a href="{{ site.url }}">{{ site.name | smarty_pants }}</a>
+        <a href="{{ site.url }}">{{ settings.title | smarty_pants }}</a>
       </h1>
 
       {% unless site.description == empty %}
-        <h3>{{ site.description | smarty_pants }}</h3>
+        <h3>{{ settings.tagline | smarty_pants }}</h3>
       {% endunless %}
+    </div>
 
-      {% include 'nav_menu' %}
-    </header>
+    {% include 'nav_menu' %}
+  </header>
 
 
-    <main>
-      {{ content_for_layout }}
-    </main>
+  <main>
+    {{ content_for_layout }}
+  </main>
 
-    <!--
-    <aside class="sidebar">
-      {% include 'bio' %}
+  <!--
+  <aside class="sidebar">
+  {% include 'bio' %}
 
-      <section class="archive">
-        <h1>Archive</h1>
-        {% form 'archive' %}
-        <a href="{{ site.archive_url }}">Browse the archive</a>
-      </section>
+  <section class="archive">
+  <h1>Archive</h1>
+  {% form 'archive' %}
+  <a href="{{ site.archive_url }}">Browse the archive</a>
+  </section>
 
-      {% include 'contributors' %}
+  {% include 'contributors' %}
 
-      {% if site.subscription_enabled? %}
-        <section class="subscribe">
-          <h1>Subscribe</h1>
+  {% if site.subscription_enabled? %}
+  <section class="subscribe">
+  <h1>Subscribe</h1>
 
-          {% form 'subscribe' include_prompt:true %}
+  {% form 'subscribe' include_prompt:true %}
 
-          <a href="{{ site.feed_url }}">Subscribe to the feed</a>
-        </section>
-      {% endif %}
+  <a href="{{ site.feed_url }}">Subscribe to the feed</a>
+  </section>
+  {% endif %}
 
-      {% include 'blogroll' %}
-      {% include 'tags' %}
-    </aside>
-    -->
+  {% include 'blogroll' %}
+  {% include 'tags' %}
+  </aside>
+  --><footer>
+    <p class="paragraph left">
+      {{ settings.contact }}
+    </p>
+    <!-- {{ posthaven.user_menu }} -->
+    <p class="paragraph">© 2022 {{ "now" | date: "%Y" }}<br>All Rights Reserved</p>
+  </footer>
 
-    <footer>
-      <!-- {{ posthaven.user_menu }} --> 
-      <p class="paragraph">© Copyright {{ "now" | date: "%Y" }}<br>All Rights Reserved</p>
-    </footer>
-
-    {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
-    {{ posthaven.includes_for_body }}
-  </body>
-</html>
+  {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
+  {{ posthaven.includes_for_body }}
+</body></html>
