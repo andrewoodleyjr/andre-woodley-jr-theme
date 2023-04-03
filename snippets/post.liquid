@@ -9,7 +9,9 @@
       <div class="private-indicator" title="This post is private">&#128274;</div>
     {% endif %}
 
-    <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <h1 class="title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h1>
   </header>
 
   <div class="body">
@@ -30,7 +32,7 @@
           &bull;
         {% endif %}
       {% endunless %}
-      posted
+      Posted
       <a href="{{ post.url }}" class="{{ post.url | text_if_current }}">
         {{ post.published_at | relative_date }}
       </a>
@@ -48,10 +50,10 @@
 
       <!-- 
       {% if post.url.current_page? %}
-        |
-        <span class="view-count">
-          {{ post | view_count: 'page view' }}
-        </span>
+      |
+      <span class="view-count">
+      {{ post | view_count: 'page view' }}
+      </span>
       {% endif %}
       -->
     </div>
