@@ -1,8 +1,45 @@
 ---
-name:
-author:
-url:
+name: Woodley
+author: Andre Woodley Jr.
+url: https://github.com/andrewoodleyjr/andre-woodley-jr-theme
 posts_per_page:
   include_in_settings: false
   default: 10
 settings:
+- id: title
+  label: Site Title
+  default: Site Title
+  type: text
+- id: tagline
+  label: Site Tagline
+  default: Site Tagline
+  type: text
+- id: headline
+  label: Headline
+  default: Theme Elements
+  type: text
+- id: subheadline
+  label: SubHeadline
+  default: Sub Headline
+  type: text
+- id: contact
+  label: Contact
+  default: hello@email.com
+  type: text
+- id: dark_color
+  label: Dark Color
+  default: "#000"
+  type: color
+- id: light_color
+  label: Light Color
+  default: "#fefefe"
+  type: color
+- id: user_system_dark_light_mode
+  label: User System Dark Light Mode
+  type: dropdown
+  default: false
+  options:
+  - value: true
+    label: On
+  - value: false
+    label: Off
