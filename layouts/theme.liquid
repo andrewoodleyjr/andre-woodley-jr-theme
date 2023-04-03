@@ -81,7 +81,9 @@
       {% endunless %}
     </div>
 
-    {% include 'nav_menu' %}
+    {% if posts.size > 0 %}
+      {% include 'nav_menu' %}
+    {% endif %}
   </header>
 
 
