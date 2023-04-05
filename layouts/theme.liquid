@@ -55,14 +55,13 @@
       color: var(--text-color) !important;
     }
 
-    {% if settings.user_system_dark_light_mode %}
-      @media(prefers-color-scheme: dark) {
-        body {
-          background-color: var(--bg-color-dark) !important;
-          color: var(--text-color-dark) !important;
-        }
+    @media(prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-color-dark) !important;
+        color: var(--text-color-dark) !important;
       }
-    {% endif %}
+    }
+    {% if settings.user_system_dark_light_mode %}{% endif %}
   </style>
 </head>
 
@@ -76,8 +75,10 @@
         <a href="{{ site.url }}">{{ settings.title | smarty_pants }}</a>
       </h1>
 
-      {% unless site.description == empty %}
-        <h3>{{ settings.tagline | smarty_pants }}</h3>
+      {% unless settings.tagline == empty %}
+        <h3>
+          <a href="{{ site.url }}">{{ settings.tagline | smarty_pants }}</a>
+        </h3>
       {% endunless %}
     </div>
 
