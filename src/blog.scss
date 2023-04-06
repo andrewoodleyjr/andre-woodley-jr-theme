@@ -128,7 +128,7 @@ body > header {
       
       &:last-child {
         // styles for the last child of a nested li element
-        margin-right: 0;
+        margin-right: 1em;
       }
 
       a {
@@ -249,6 +249,11 @@ body > footer {
         }
 
         li {
+          &:last-child {
+            // styles for the last child of a nested li element
+            margin-right: 0 !important;
+          }
+
           a{
             font-weight: bold;
           }
@@ -261,6 +266,12 @@ body > footer {
     width: 100% !important;
   }
 
+  .toggle-div {
+    position: absolute;
+    right: 0;
+    margin-right: 1em;
+    top: 1em;
+  }
 }
 
 main {
@@ -315,6 +326,8 @@ section.dated {
     top: 0;
     left: 0;
     // padding: 1.5rem;
+    position: fixed;
+    padding: 1.75em;
   }
 
   body {
@@ -721,4 +734,82 @@ main > section.archive {
     display: inline-block;
     margin-right: 0.25em;
   }
+}
+
+
+// ----------------------------------------------------------
+// Toggle Button
+// ----------------------------------------------------------
+
+.toggle-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 100vw;
+  // height: 100vh;
+}
+
+.toggle-container {
+  position: relative;
+  width: 30px;
+  height: 60px;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.icon-sun,
+.icon-moon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.icon-sun {
+  position: absolute;
+  top: 5px;
+  opacity: 1;
+}
+
+.icon-moon {
+  position: absolute;
+  bottom: 5px;
+  opacity: 0.25;
+}
+
+.toggle-input:checked + .toggle-label {
+  background-color: transparent;
+  border: none;
+}
+
+.toggle-input:checked + .toggle-label .icon-sun {
+  opacity: 0.25;
+}
+
+.toggle-input:checked + .toggle-label .icon-moon {
+  opacity: 1;
+}
+
+body.dark-mode .icon-sun,
+body.dark-mode .icon-moon {
+  filter: invert(1);
 }
