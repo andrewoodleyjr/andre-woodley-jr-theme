@@ -445,7 +445,7 @@ footer.post-responses .new-comment {
   margin: 1em 0 2em; }
 
 article.post {
-  margin-top: 3em;
+  margin-top: 6em;
   margin-bottom: 3em; }
 
 section.posts article.post {
@@ -658,6 +658,9 @@ body.dark-mode .icon-moon {
   body > aside.sidebar {
     padding-left: 0; } }
 @media only screen and (max-width: 1024px) {
+  article.post {
+    margin-top: 3em !important; }
+
   body {
     /* Styles for small screens (tablets, 768px and up) */
     display: flex !important; }

@@ -402,7 +402,7 @@ footer.post-responses {
 }
 
 article.post {
-  margin-top: 3em;
+  margin-top: 6em;
   margin-bottom: 3em;
 }
 
@@ -759,6 +759,10 @@ body.dark-mode .icon-moon {
 }
 
 @media only screen and (max-width: 1024px) {
+  article.post {
+    margin-top: 3em !important;
+  }
+  
   body {
     /* Styles for small screens (tablets, 768px and up) */
     display: flex !important;
