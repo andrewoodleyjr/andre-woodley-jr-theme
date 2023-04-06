@@ -9,3 +9,21 @@
     <p>{{ site.profile.bio }}</p>
   </div>
 </section>
+
+
+<section class="home recognition">
+  <div>
+    <h4>Recognition.</h4>
+    <p>{{ settings.recognition_text }}</p>
+  </div>
+  <div class="grid-container">
+    {% assign recognitions = settings.recognition_items | split: "|" %}
+    {% for recognition in recognitions %}
+      {% assign detail = recognition | split: "*" %}
+      <div class="grid-item">
+        <h3>{{ detail[0] }}</h3>
+        {{ detail[1] }}
+      </div>
+    {% endfor %}
+  </div>
+</section>
