@@ -26,6 +26,14 @@ settings:
   label: Contact
   default: hello@email.com
   type: text
+- id: recognition_text
+  label: Recongnition Statement
+  default: Provide recongnition statement here
+  type: text 
+- id: recognition_items
+  label: Recongnition Items (max 450 characters)
+  default: Title1*Description1|Title2*Description2|Title3*Description3
+  type: text 
 - id: dark_color
   label: Dark Color
   default: "#000"
@@ -34,12 +42,3 @@ settings:
   label: Light Color
   default: "#fefefe"
   type: color
-- id: user_system_dark_light_mode
-  label: User System Dark Light Mode
-  type: dropdown
-  default: false
-  options:
-  - value: true
-    label: On
-  - value: false
-    label: Off

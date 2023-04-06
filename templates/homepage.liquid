@@ -14,44 +14,16 @@
 <section class="home recognition">
   <div>
     <h4>Recognition.</h4>
-    <p>Andre is an alum of Y-Combinator - Tennessee State University (HBCU) - CODE2040</p>
+    <p>{{ settings.recognition_text }}</p>
   </div>
   <div class="grid-container">
-    <div class="grid-item">
-      <h3>San Francisco Chronicle</h3>
-      California’s EDD is so hard to reach that unemployed people are paying go-betweens to do it for them
-    </div>
-    <div class="grid-item">
-      <h3>NBC Los Angeles</h3>
-      People Connect with CA Unemployment Phone Line in 2 Minutes, Here's How
-    </div>
-    <div class="grid-item">
-      <h3>The Tennessean</h3>
-      New App Brings TSU to Students Finger Tips
-    </div>
-    <div class="grid-item">
-      <h3>The Meter</h3>
-      Student Alum Develop Big Blue App
-    </div>
-    <div class="grid-item">
-      <h3>HBCU Digest</h3>
-      Student Launches First HBCU App
-    </div>
-    <div class="grid-item">
-      <h3>The News Journal</h3>
-      Teens deliver style - and a message
-    </div>
-    <div class="grid-item">
-      <h3>Banaroo Music Festival</h3>
-      1st Place Banaroo Music Festival Hackathon
-    </div>
-    <div class="grid-item">
-      <h3>NSBE Hackathon</h3>
-      1st Place NSBE Hackathon
-    </div>
-    <div class="grid-item">
-      <h3>Hack Nashville</h3>
-      2nd Place HackNashville Hackathon
-    </div>
+    {% assign recognitions = settings.recognition_items | split: "|" %}
+    {% for recognition in recognitions %}
+      {% assign detail = recognition | split: "*" %}
+      <div class="grid-item">
+        <h3>{{ detail[0] }}</h3>
+        {{ detail[1] }}
+      </div>
+    {% endfor %}
   </div>
 </section>

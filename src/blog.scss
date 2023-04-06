@@ -216,63 +216,6 @@ body > footer {
   }
 }
 
-@media screen and (max-width: 1199px) {
-  body {
-    // padding: 1em;
-  }
-  body > main, body > aside.sidebar {
-    // margin-top: 2em;
-    width: 100%;
-  }
-
-  body > aside.sidebar {
-    padding-left: 0;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  body {
-    /* Styles for small screens (tablets, 768px and up) */
-    display: flex !important;
-
-    header {
-      flex-direction: column;
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      nav {
-        margin-top: 10px;
-        
-        ul {
-          justify-content: center;
-        }
-
-        li {
-          &:last-child {
-            // styles for the last child of a nested li element
-            margin-right: 0 !important;
-          }
-
-          a{
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
-
-  section.home {
-    width: 100% !important;
-  }
-
-  .toggle-div {
-    position: absolute;
-    right: 0;
-    margin-right: 1em;
-    top: 1em;
-  }
-}
 .grid-item {
   padding: 5px 0 !important;
 }
@@ -310,67 +253,6 @@ section.dated {
   flex-direction: column;
   h4 {
     font-size: 2.5em;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .centered-content {
-    h1 {
-      font-size: 3.5rem;
-    }
-  }
-
-  /* Styles for large screens (laptops, desktops) */
-  header {
-    width: 100% !important;
-    max-width: 100% !important;
-    // position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    // padding: 1.5rem;
-    position: fixed;
-    padding: 1.75em;
-  }
-
-  body {
-    header {
-      h1 {
-        margin-top: 0 !important;
-      }
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      // padding: 20px;
-      // background-color: #333;
-    }
-
-    nav {
-      margin-left: auto;
-
-      ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-          margin-left: 0px;
-        }
-      }
-    }
-  }
-
-  footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    // position: fixed;
-    bottom: 0;
-    left: 0;
-    // padding: 1.5rem;
-    margin: 0 !important;
-    display: flex;
   }
 }
 
@@ -463,7 +345,7 @@ article.post, article.page {
     div.details {
       margin-bottom: 0.75em;
       font-size: 0.9em;
-      color: #4c4c4c;
+      opacity: .5;
       margin-right: 1em;
     }
 
@@ -559,6 +441,7 @@ section.recognition {
   width: 100%;
   min-height: 100vh;
   align-items: start;
+  margin-bottom: 4em;
 }
 
 footer.pagination {
@@ -743,9 +626,11 @@ main > section.archive {
 
 
 
-// Grid
+// ----------------------------------------------------------
+// Recongnition Section
+// ----------------------------------------------------------
 
-/* Basic grid styling */
+// Basic grid styling
 .grid-container {
   display: flex;
   flex-wrap: wrap;
@@ -765,16 +650,10 @@ main > section.archive {
     margin-bottom: 1em;
     font-size: .8rem;
     text-transform: uppercase;
-    color: #4c4c4c;
+    opacity: .5;
   }
 }
 
-/* Responsive breakpoint for small devices */
-@media (max-width: 768px) {
-  .grid-item {
-    min-width: calc(100% - 10px);
-  }
-}
 // ----------------------------------------------------------
 // Toggle Button
 // ----------------------------------------------------------
@@ -783,8 +662,6 @@ main > section.archive {
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 100vw;
-  // height: 100vh;
 }
 
 .toggle-container {
@@ -841,13 +718,141 @@ main > section.archive {
 
 .toggle-input:checked + .toggle-label .icon-sun {
   opacity: 0.25;
+  top: auto;
+  bottom: 5px;
 }
 
 .toggle-input:checked + .toggle-label .icon-moon {
   opacity: 1;
+  top: 5px;
+  bottom: auto;
 }
 
 body.dark-mode .icon-sun,
 body.dark-mode .icon-moon {
   filter: invert(1);
+}
+
+// ----------------------------------------------------------
+// Media Queries
+// ----------------------------------------------------------
+
+/* Responsive breakpoint for small devices */
+@media (max-width: 768px) {
+  .grid-item {
+    min-width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  body {
+    // padding: 1em;
+  }
+  body > main, body > aside.sidebar {
+    // margin-top: 2em;
+    width: 100%;
+  }
+
+  body > aside.sidebar {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    /* Styles for small screens (tablets, 768px and up) */
+    display: flex !important;
+
+    header {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      nav {
+        margin-top: 10px;
+        
+        ul {
+          justify-content: center;
+        }
+
+        li {
+          &:last-child {
+            // styles for the last child of a nested li element
+            margin-right: 0 !important;
+          }
+
+          a{
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  section.home {
+    width: 100% !important;
+  }
+
+  .toggle-div {
+    position: absolute;
+    right: 0;
+    margin-right: 1em;
+    top: 1em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .centered-content {
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  /* Styles for large screens (laptops, desktops) */
+  header {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 1.75em;
+  }
+
+  body {
+    header {
+      h1 {
+        margin-top: 0 !important;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav {
+      margin-left: auto;
+
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    bottom: 0;
+    left: 0;
+    margin: 0 !important;
+    display: flex;
+  }
 }
