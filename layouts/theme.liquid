@@ -24,16 +24,6 @@
     {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
     {{ posthaven.includes_for_head }}
 
-    {% if settings.background_color %}
-      <style>
-        body {
-          background-color: {{ settings.background_color }}
-           !important;
-        }
-      </style>
-    {% endif %}
-
-
 
     <style > :root
     {
@@ -51,22 +41,78 @@
     }
 
     body {
-      background-color: var(--bg-color) !important;
-      color: var(--text-color) !important;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
+    body.dark-mode {
+      background-color: var(--bg-color-dark) !important;
+      color: var(--text-color-dark) !important;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      const body = document.body;
+      const sunIcon = document.querySelector('.icon-sun');
+      const moonIcon = document.querySelector('.icon-moon');
 
-    {% if settings.user_system_dark_light_mode %}
-      @media(prefers-color-scheme: dark) {
-        body {
-          background-color: var(--bg-color-dark) !important;
-          color: var(--text-color-dark) !important;
+      function saveData(key, value) { // Saving data to local storage
+        try {
+          localStorage.setItem(key, value);
+        } catch (e) { // console.error('Error saving data to local storage:', e);
         }
       }
-    {% endif %}
-  </style>
-</head>
 
+      function getData(key) { // Retrieving data from local storage
+        try {
+          const value = localStorage.getItem(key);
+          if (value === null) { // console.log('No data found for the given key');
+            return null;
+          }
+          return value;
+        } catch (e) { // console.error('Error retrieving data from local storage:', e);
+        }
+      }
+
+      function useDarkTheme(bool) {
+        if (bool) {
+          body.classList.add('dark-mode');
+          saveData('useDarkTheme', true);
+          sunIcon.classList.add('white-icon');
+          moonIcon.classList.add('white-icon');
+        } else {
+          body.classList.remove('dark-mode');
+          saveData('useDarkTheme', false);
+          sunIcon.classList.remove('white-icon');
+          moonIcon.classList.remove('white-icon');
+        }
+      }
+
+      const retrievedValue = getData('useDarkTheme');
+
+      if (retrievedValue === 'true') { // user has previously selected dark mode
+        useDarkTheme(true);
+        document.getElementById('toggle').checked = true;
+      } else if (retrievedValue === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { // User prefers dark mode
+        useDarkTheme(true);
+        document.getElementById('toggle').checked = true;
+      } else { // User prefers light mode or has not selected a preference
+        useDarkTheme(false);
+        document.getElementById('toggle').checked = false;
+      }
+
+
+
+      document.getElementById('toggle').addEventListener('change', (e) => {
+        if (e.target.checked) { // Code to execute when the toggle is switched to the moon
+          useDarkTheme(true)
+        } else { // Code to execute when the toggle is switched back to the sun
+          useDarkTheme(false)
+        }
+      });
+    }, 100)
+  </script>
+</head>
 <body class='site-{{ site.id }}'>
 
   <header>
@@ -77,12 +123,35 @@
         <a href="{{ site.url }}">{{ settings.title | smarty_pants }}</a>
       </h1>
 
-      {% unless site.description == empty %}
-        <h3>{{ settings.tagline | smarty_pants }}</h3>
+      {% unless settings.tagline == empty %}
+        <h3>
+          <a href="{{ site.url }}">{{ settings.tagline | smarty_pants }}</a>
+        </h3>
       {% endunless %}
     </div>
 
     {% include 'nav_menu' %}
+
+    <div class="toggle-div">
+      <div class="toggle-container">
+        <input
+          type="checkbox"
+          id="toggle"
+          class="toggle-input">
+        <label for="toggle" class="toggle-label">
+          <img
+            src="{{ 'svgs/sun.svg' | asset_url }}"
+            alt="Sun"
+            id="sun"
+            class="icon-sun">
+          <img
+            src="{{ 'svgs/moon.svg' | asset_url }}"
+            alt="Moon"
+            id="moon"
+            class="icon-moon">
+        </label>
+      </div>
+    </div>
   </header>
 
 
@@ -90,39 +159,13 @@
     {{ content_for_layout }}
   </main>
 
-  <!--
-  <aside class="sidebar">
-  {% include 'bio' %}
-
-  <section class="archive">
-  <h1>Archive</h1>
-  {% form 'archive' %}
-  <a href="{{ site.archive_url }}">Browse the archive</a>
-  </section>
-
-  {% include 'contributors' %}
-
-  {% if site.subscription_enabled? %}
-  <section class="subscribe">
-  <h1>Subscribe</h1>
-
-  {% form 'subscribe' include_prompt:true %}
-
-  <a href="{{ site.feed_url }}">Subscribe to the feed</a>
-  </section>
-  {% endif %}
-
-  {% include 'blogroll' %}
-  {% include 'tags' %}
-  </aside>
-  --><footer>
+  <footer>
     <p class="paragraph left">
       {{ settings.contact }}
     </p>
     <!-- {{ posthaven.user_menu }} -->
-    <p class="paragraph">© 2022 {{ "now" | date: "%Y" }}<br>All Rights Reserved</p>
+    <p class="paragraph">© 2022 {{ "now" | date: "%Y" }}</p>
   </footer>
 
   {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
-  {{ posthaven.includes_for_body }}
-</body></html>
+  {{ posthaven.includes_for_body }}</body></html>
