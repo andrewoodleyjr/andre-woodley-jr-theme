@@ -124,11 +124,11 @@ body > header {
     li {
       font-size: 1em;
       display: inline-block;
-      margin-right: 1em;
+      margin-right: 2em;
 
       &:last-child {
         // styles for the last child of a nested li element
-        margin-right: 1em;
+        margin-right: 2em;
       }
 
       a {
@@ -402,7 +402,7 @@ footer.post-responses {
 }
 
 article.post {
-  margin-top: 6em;
+  margin-top: 15em;
   margin-bottom: 3em;
 }
 
@@ -419,45 +419,16 @@ section.posts article.post {
 /* Basic styling for the sections */
 section.home {
   position: relative;
-  // padding: 2rem;
-  // margin-bottom: 3rem;
-  // border: 1px solid #ccc;
 }
 
 
-/* Create a down arrow using CSS */
-section.home:first-of-type::after {
-  content: '';
+.arrow-down {
   position: absolute;
-  bottom: 5rem; /* Adjust this value to move the arrow up or down */
+  bottom: 15%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: .75rem solid transparent;
-  border-right: .75rem solid transparent;
-  border-top: .75rem solid currentColor;
-  animation: jump 3s ease-in-out 3, fade-out 9s ease 1 forwards;
-  opacity: .5;
-}
-
-@keyframes jump {
-  0%, 100% {
-      transform: translate(-50%, 0%);
-  }
-  50% {
-      transform: translate(-50%, calc(100%));
-  }
-}
-
-/* Define the fade-out animation */
-@keyframes fade-out {
-  0% {
-      opacity: .5;
-  }
-  100% {
-      opacity: 0;
-  }
+  transform: translateY(100%) translateX(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 section.home {
@@ -521,7 +492,7 @@ main > section.archive {
   align-content: flex-start;
   height: auto;
   min-height: 100vh;
-  margin-top: 2em;
+  margin-top: 12em;
 
   h2 {
     width: 100%;
@@ -773,7 +744,8 @@ main > section.archive {
 }
 
 body.dark-mode .icon-sun,
-body.dark-mode .icon-moon {
+body.dark-mode .icon-moon,
+body.dark-mode .arrow-down {
   filter: invert(1);
 }
 
@@ -804,6 +776,10 @@ body.dark-mode .icon-moon {
 
 @media only screen and (max-width: 1024px) {
   article.post {
+    margin-top: 3em !important;
+  }
+
+  main > section.archive {
     margin-top: 3em !important;
   }
 
