@@ -19,6 +19,12 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <link
+      rel="search"
+      type="application/opensearchdescription+xml"
+      title="{{ settings.title }}"
+      href="{{ 'opensearch.xml' | asset_url }}">
+
     {{ 'blog.css' | asset_url | stylesheet_tag }}
 
     {% comment %} This Required for internal Posthaven functionality to work!.  {% endcomment %}
@@ -52,7 +58,7 @@
   </style>
 </head>
 <body class='site-{{ site.id }}'>
-  {% 'light-dark.js' | asset_url | script_tag %}
+  <script type="text/javascript" src="{{ 'light-dark.js' | asset_url }}"></script>
   <header>
     {% include 'alerts' %}
 

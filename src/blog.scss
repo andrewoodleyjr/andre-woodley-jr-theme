@@ -774,6 +774,12 @@ body.dark-mode .arrow-down {
   }
 }
 
+article {
+  header {
+    align-items: start !important;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   article.post {
     margin-top: 3em !important;

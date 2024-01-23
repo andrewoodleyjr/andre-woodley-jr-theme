@@ -1,0 +1,15 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Andre Woodley Jr</ShortName>
+<LongName>Andre Woodley Jr Search Site</LongName>
+<InputEncoding>UTF-8</InputEncoding>
+<AdultContent>false</AdultContent>
+<Language>en-us</Language>
+<Contact>hello@andrewoodleyjr.com</Contact>
+<Description>Andre Woodley Jr. Personal Site</Description>
+<Tags>tech entreprenuer engineer blog</Tags>
+<Attribution>Search Andre Woodley Jr site, https://www.andrewoodleyjr.com/</Attribution>
+<Image height="16" width="16" type="image/x-icon">https://www.andrewoodleyjr.com/favicon.ico</Image>
+<Developer>Andre Woodley Jr</Developer>
+<Url type="text/html" method="get" template="https://www.andrewoodleyjr.com/archive?query={searchTerms}"/>
+<moz:SearchForm>https://andrewoodleyjr.com</moz:SearchForm>
+</OpenSearchDescription>

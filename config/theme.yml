@@ -29,11 +29,11 @@ settings:
 - id: recognition_text
   label: Recongnition Statement
   default: Provide recongnition statement here
-  type: text 
+  type: text
 - id: recognition_items
   label: Recongnition Items (max 450 characters)
   default: Title1*Description1|Title2*Description2|Title3*Description3
-  type: text 
+  type: text
 - id: dark_color
   label: Dark Color
   default: "#000"
