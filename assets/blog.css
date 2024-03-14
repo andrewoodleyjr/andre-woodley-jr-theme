@@ -742,3 +742,6 @@ article header {
     left: 0;
     margin: 0 !important;
     display: flex; } }
+
+ul li {
+  list-style-type: disc; }
