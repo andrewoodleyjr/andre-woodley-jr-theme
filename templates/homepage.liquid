@@ -1,8 +1,9 @@
 <section class="home centered-content">
   {% if settings.recent_post_in_header %}
     {% assign recent_post = posts.first %}
+    <h6 style="line-height:1.8em;">New Reading</h6>
     <h1><a href="{{ recent_post.url }}">{{ recent_post.title }}</a></h1>
-    <p><a href="{{ recent_post.url }}">Read my lastest post</a></p>
+    <p><a href="{{ recent_post.url }}">continue reading post</a></p>
   {% else %}
     <h1>{{ settings.headline }}</h1>
     <p>{{ settings.subheadline }}</p>
