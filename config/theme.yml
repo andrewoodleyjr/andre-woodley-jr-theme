@@ -42,3 +42,7 @@ settings:
   label: Light Color
   default: "#fefefe"
   type: color
+- id: recent_post_in_header
+  label: Show Recent Post in Main Header
+  default: false
+  type: checkbox
