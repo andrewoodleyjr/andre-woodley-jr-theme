@@ -759,6 +759,7 @@ body.dark-mode .arrow-down {
   .grid-item {
     min-width: calc(100% - 10px);
   }
+
 }
 
 @media screen and (max-width: 1199px) {
@@ -907,3 +908,10 @@ ul li {
   animation: pulseArrow 1s ease-in-out 5 forwards;
 }
 
+
+.subscribe {
+  display: inline-block;
+  top: -5px;
+  position: relative;
+  font-size: 14px;
+}

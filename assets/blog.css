@@ -756,3 +756,9 @@ ul li {
   width: 1.5rem;
   height: 1.5rem;
   animation: pulseArrow 1s ease-in-out 5 forwards; }
+
+.subscribe {
+  display: inline-block;
+  top: -5px;
+  position: relative;
+  font-size: 14px; }
