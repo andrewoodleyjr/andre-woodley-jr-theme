@@ -1071,3 +1071,68 @@ body.dark-mode .posthaven-archive-form input[type="text"] {
   border-color: #007bff; /* Changes the border color to highlight the input field when focused */
   box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle glow effect to indicate focus */
 }
+
+/* Home Button */
+
+/* Base state */
+a.home-post-button {
+  background-color: var(--bg-color-dark); /* Dark mode background color */
+  color: var(--bg-color); /* Dark mode text color */
+  position: relative; /* Needed for offsetting the background */
+}
+
+/* Visited state */
+a.home-post-button:visited {
+  color: var(--bg-color); /* Example: Adjust if you want a different color for visited links */
+}
+
+// /* Other states like hover or focus could be added here, e.g., */
+// a.home-post-button:hover {
+//   background-color: var(--bg-color-dark); /* Adjust as needed */
+//   color: var(--bg-color); /* Adjust as needed */
+// }
+
+a.home-post-button {
+  color: var(--bg-color); /* Text color */
+  position: relative; /* Enables absolute positioning of pseudo-elements inside */
+  text-decoration: none; /* Optional: Removes underline from links */
+  display: inline-block; /* Allows the use of width and height */
+  padding: 10px 20px; /* Text padding - adjust as needed */
+}
+
+a.home-post-button::before {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  top: 5px; /* Offset down */
+  right: -5px; /* Offset to the left (negative value) */
+  bottom: -5px; /* Offset up (negative value) */
+  left: 5px; /* Offset to the right */
+  background-color: var(--bg-color-dark); /* Background color */
+  z-index: -1; /* Ensures the background is behind the text */
+}
+
+body.dark-mode a.home-post-button::before {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  top: 5px; /* Offset down */
+  right: -5px; /* Offset to the left (negative value) */
+  bottom: -5px; /* Offset up (negative value) */
+  left: 5px; /* Offset to the right */
+  background-color: var(--bg-color); /* Background color */
+  z-index: -1; /* Ensures the background is behind the text */
+}
+
+a.home-post-button, a.home-post-button:visited {
+  background-color: var(--bg-color-dark); /* Light mode background color */
+  color: var(--bg-color); /* Light mode text color */
+  // box-shadow: 4px 4px 0 0 var(--bg-color-dark); /* Offset effect for light mode */
+  // transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transitions for color and shadow changes */
+}
+
+body.dark-mode a.home-post-button, body.dark-mode a.home-post-button:visited {
+  background-color: var(--bg-color) !important; /* Dark mode background color */
+  color: var(--bg-color-dark) !important; /* Dark mode text color */
+  // box-shadow: 4px 4px 0 0 var(--bg-color) !important; /* Offset effect for dark mode */
+}
+
+
