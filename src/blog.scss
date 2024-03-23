@@ -920,12 +920,100 @@ ul li {
   animation: pulseArrow 1s ease-in-out 5 forwards;
 }
 
-
+/* Subscribe Button */
 .subscribe {
   display: inline-block;
+  top: -1px;
+  position: relative;
+  font-size: 14px;
+}
+
+.posthaven-anon.posthaven-subscribe-prompt {
+  display: inline-block;
+  padding: 3px 14px;
+  background-color: var(--bg-color-dark);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  top: -1px;
+  position: relative;
+}
+
+
+body.dark-mode .posthaven-anon.posthaven-subscribe-prompt {
+  background-color: var(--bg-color);
+  color: var(--bg-color-dark);
+}
+
+.posthaven-subscribe-form {
+  display: block;
   top: -5px;
   position: relative;
   font-size: 14px;
+  margin-top: 20px;
+}
+
+.posthaven-subscribe-anon::before {
+  content: 'Subscribe'; /* Title you want to add */
+  display: block; /* Ensure the pseudo-element behaves like a block-level element */
+  font-size: 24px; /* Example font size, adjust as needed */
+  margin-bottom: 20px; /* Space between the title and the form */
+}
+
+.posthaven-subscribe-anon {
+  display: block; /* Ensures it's treated as a block-level element */
+  margin-bottom: 20px; /* Adjust as needed */
+  font-size: 16px;
+}
+
+.posthaven-subscribe-anon > * {
+  display: block; /* Makes each child take up its own line */
+  margin-bottom: 10px; /* Adds space between elements */
+}
+
+.posthaven-anon input[type="text"], .posthaven-anon input[type="submit"], .posthaven-subscribe-anon input[type="text"], .posthaven-subscribe-anon input[type="submit"] {
+  width: 100%; /* Makes the input fields fill their container */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.posthaven-subscribe-anon input[type="text"] {
+  width: 100%; /* Ensures the input field fills the width of its container */
+  padding: 10px; /* Adds space inside the field, making it taller and easier to interact with */
+  font-size: 16px; /* Sets a comfortable reading size for the text entered */
+  border-radius: 5px; /* Rounds the corners of the input field */
+  border: 1px solid #ccc; /* Adds a subtle border to the field */
+  box-sizing: border-box; /* Includes padding and border in the field's total width and height */
+}
+
+.posthaven-subscribe-anon input[type="submit"] {
+  padding: 10px 20px; /* Adds space inside the button, making it wider and taller */
+  font-size: 16px; /* Ensures the text on the button is easily readable */
+  border-radius: 5px; /* Rounds the corners of the submit button */
+  border: none; /* Removes the default border */
+  background-color: var(--bg-color-dark); /* Uses CSS variable for the background color */
+  color: var(--bg-color); /* Uses CSS variable for the text color */
+  cursor: pointer; /* Changes the cursor to indicate the button is clickable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode toggle */
+}
+
+/* Dark mode styles */
+body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
+  background-color: var(--bg-color); /* Dark mode background color */
+  color: var(--bg-color-dark); /* Dark mode text color */
+}
+
+/* Hover effects for the submit button to provide visual feedback */
+.posthaven-subscribe-anon input[type="submit"]:hover {
+  opacity: 0.9; /* Slightly reduces opacity on hover */
+}
+
 /* Archive Results */
 .archive-entry {
   list-style-type: none;
