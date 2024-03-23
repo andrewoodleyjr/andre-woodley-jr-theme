@@ -926,4 +926,34 @@ ul li {
   top: -5px;
   position: relative;
   font-size: 14px;
+/* Archive Results */
+.archive-entry {
+  list-style-type: none;
+}
+
+.posthaven-archive-form input[type="text"] {
+  width: 100%; /* Ensures the input field uses the full width available */
+  padding: 15px 20px; /* Provides ample space inside the input field for easy interaction */
+  font-size: 18px; /* Increases the font size for better readability */
+  border-radius: 10px; /* Adds rounded corners for a modern look */
+  border: 1px solid #ccc; /* Defines a subtle border around the input field */
+  box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+  background-color: var(--bg-color); /* A light background color to distinguish the input field */
+  color: var(--bg-color-dark)
+}
+
+body.dark-mode .posthaven-archive-form input[type="text"] {
+  background-color: var(--bg-color-dark) !important; /* A light background color to distinguish the input field */
+  color: var(--bg-color) !important;
+}
+
+.posthaven-archive-form input[type="text"]::placeholder {
+  color: #aaa; /* Changes the placeholder text color for better contrast */
+  opacity: 1; /* Ensures the placeholder text is fully opaque */
+}
+
+.posthaven-archive-form input[type="text"]:focus {
+  outline: none; /* Removes the default focus outline */
+  border-color: #007bff; /* Changes the border color to highlight the input field when focused */
+  box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle glow effect to indicate focus */
 }
