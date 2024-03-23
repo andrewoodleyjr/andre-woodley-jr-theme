@@ -110,8 +110,10 @@
       {{ settings.contact }}
     </p>
     <!-- {{ posthaven.user_menu }} -->
-    <p class="paragraph">© 1990
-      {% comment %} {{ "now" | date: "%Y" }} {% endcomment %}
+    <p class="paragraph">© {{ settings.copyright_start_date }}
+      {%  if settings.copyright_end_date_now %}
+        {{ "now" | date: "%Y" }}
+      {% endif %}
     </p>
   </footer>
 
