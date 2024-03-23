@@ -801,6 +801,7 @@ article {
 
       nav {
         margin-top: 10px;
+        margin: auto !important;
 
         ul {
           justify-content: center;
@@ -890,3 +891,24 @@ article {
 ul li {
   list-style-type: disc;
 }
+
+
+@keyframes pulseArrow {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+.arrow-down {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateY(100%) translateX(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: pulseArrow 1s ease-in-out 5 forwards;
+}
+
