@@ -457,6 +457,15 @@ section.posts article.post {
 section.home {
   position: relative; }
 
+section.home h1 {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.2;
+  word-wrap: break-word;
+  font-size: 2.5em; }
+  section.home h1 a {
+    text-decoration: none !important; }
+
 .arrow-down {
   position: absolute;
   bottom: 15%;
