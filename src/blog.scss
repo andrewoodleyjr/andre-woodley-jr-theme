@@ -854,6 +854,9 @@ article {
   body {
     header {
       h1 {
+        a {
+          text-decoration: none !important;
+        }
         margin-top: 0 !important;
       }
 
