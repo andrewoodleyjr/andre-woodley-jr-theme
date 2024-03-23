@@ -42,6 +42,10 @@ settings:
   label: Light Color
   default: "#fefefe"
   type: color
+- id: search_result_color
+  label: Search Result Color
+  default: "#000"
+  type: color
 - id: recent_post_in_header
   label: Show Recent Post in Main Header
   default: false
