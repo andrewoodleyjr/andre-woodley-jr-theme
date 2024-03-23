@@ -753,10 +753,14 @@ ul li {
   list-style-type: disc; }
 
 @keyframes pulseArrow {
-  0%, 100% {
-    transform: translateY(0) translateX(-50%); }
-  50% {
-    transform: translateY(-10px) translateX(-50%); } }
+  0%, 6.667%, 100% {
+    transform: translateY(100%) translateX(-50%); }
+  3.333% {
+    transform: translateY(50%) translateX(-50%); }
+  13.333%, 20%, 26.667%, 33.333%, 40% {
+    transform: translateY(100%) translateX(-50%); }
+  10%, 16.667%, 23.333%, 30%, 36.667% {
+    transform: translateY(50%) translateX(-50%); } }
 .arrow-down {
   position: absolute;
   bottom: 15%;
@@ -764,10 +768,152 @@ ul li {
   transform: translateY(100%) translateX(-50%);
   width: 1.5rem;
   height: 1.5rem;
-  animation: pulseArrow 1s ease-in-out 5 forwards; }
+  animation: pulseArrow 14.5s ease-in-out infinite; }
 
+/* Subscribe Button */
 .subscribe {
   display: inline-block;
-  top: -5px;
+  top: -1px;
   position: relative;
   font-size: 14px; }
+
+.posthaven-anon.posthaven-subscribe-prompt {
+  display: inline-block;
+  padding: 3px 14px;
+  background-color: var(--bg-color-dark);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  top: -1px;
+  position: relative; }
+
+body.dark-mode .posthaven-anon.posthaven-subscribe-prompt {
+  background-color: var(--bg-color);
+  color: var(--bg-color-dark); }
+
+.posthaven-subscribe-form {
+  display: block;
+  top: -5px;
+  position: relative;
+  font-size: 14px;
+  margin-top: 20px; }
+
+.posthaven-subscribe-anon::before {
+  content: 'Subscribe';
+  /* Title you want to add */
+  display: block;
+  /* Ensure the pseudo-element behaves like a block-level element */
+  font-size: 24px;
+  /* Example font size, adjust as needed */
+  margin-bottom: 20px;
+  /* Space between the title and the form */ }
+
+.posthaven-subscribe-anon {
+  display: block;
+  /* Ensures it's treated as a block-level element */
+  margin-bottom: 20px;
+  /* Adjust as needed */
+  font-size: 16px; }
+
+.posthaven-subscribe-anon > * {
+  display: block;
+  /* Makes each child take up its own line */
+  margin-bottom: 10px;
+  /* Adds space between elements */ }
+
+.posthaven-anon input[type="text"], .posthaven-anon input[type="submit"], .posthaven-subscribe-anon input[type="text"], .posthaven-subscribe-anon input[type="submit"] {
+  width: 100%;
+  /* Makes the input fields fill their container */
+  box-sizing: border-box;
+  /* Ensures padding and border are included in the width */
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.posthaven-subscribe-anon input[type="text"] {
+  width: 100%;
+  /* Ensures the input field fills the width of its container */
+  padding: 10px;
+  /* Adds space inside the field, making it taller and easier to interact with */
+  font-size: 16px;
+  /* Sets a comfortable reading size for the text entered */
+  border-radius: 5px;
+  /* Rounds the corners of the input field */
+  border: 1px solid #ccc;
+  /* Adds a subtle border to the field */
+  box-sizing: border-box;
+  /* Includes padding and border in the field's total width and height */ }
+
+.posthaven-subscribe-anon input[type="submit"] {
+  padding: 10px 20px;
+  /* Adds space inside the button, making it wider and taller */
+  font-size: 16px;
+  /* Ensures the text on the button is easily readable */
+  border-radius: 5px;
+  /* Rounds the corners of the submit button */
+  border: none;
+  /* Removes the default border */
+  background-color: var(--bg-color-dark);
+  /* Uses CSS variable for the background color */
+  color: var(--bg-color);
+  /* Uses CSS variable for the text color */
+  cursor: pointer;
+  /* Changes the cursor to indicate the button is clickable */
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transition for dark mode toggle */ }
+
+/* Dark mode styles */
+body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
+  background-color: var(--bg-color);
+  /* Dark mode background color */
+  color: var(--bg-color-dark);
+  /* Dark mode text color */ }
+
+/* Hover effects for the submit button to provide visual feedback */
+.posthaven-subscribe-anon input[type="submit"]:hover {
+  opacity: 0.9;
+  /* Slightly reduces opacity on hover */ }
+
+/* Archive Results */
+.archive-entry {
+  list-style-type: none; }
+
+.posthaven-archive-form input[type="text"] {
+  width: 100%;
+  /* Ensures the input field uses the full width available */
+  padding: 15px 20px;
+  /* Provides ample space inside the input field for easy interaction */
+  font-size: 18px;
+  /* Increases the font size for better readability */
+  border-radius: 10px;
+  /* Adds rounded corners for a modern look */
+  border: 1px solid #ccc;
+  /* Defines a subtle border around the input field */
+  box-sizing: border-box;
+  /* Ensures padding and border are included in the width calculation */
+  background-color: var(--bg-color);
+  /* A light background color to distinguish the input field */
+  color: var(--bg-color-dark); }
+
+body.dark-mode .posthaven-archive-form input[type="text"] {
+  background-color: var(--bg-color-dark) !important;
+  /* A light background color to distinguish the input field */
+  color: var(--bg-color) !important; }
+
+.posthaven-archive-form input[type="text"]::placeholder {
+  color: #aaa;
+  /* Changes the placeholder text color for better contrast */
+  opacity: 1;
+  /* Ensures the placeholder text is fully opaque */ }
+
+.posthaven-archive-form input[type="text"]:focus {
+  outline: none;
+  /* Removes the default focus outline */
+  border-color: #007bff;
+  /* Changes the border color to highlight the input field when focused */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  /* Adds a subtle glow effect to indicate focus */ }
