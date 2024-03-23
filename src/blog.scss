@@ -1072,6 +1072,13 @@ body.dark-mode .posthaven-archive-form input[type="text"] {
   box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle glow effect to indicate focus */
 }
 
+.archive-entry em {
+  font-weight: bolder;
+  text-decoration: overline;
+  color: var(--search-result-color);
+}
+
+
 /* Home Button */
 
 /* Base state */
