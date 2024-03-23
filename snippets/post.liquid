@@ -71,8 +71,6 @@
       </div>
     {% endunless %}
 
-    {{ post | share_buttons }}
-
     {% if site.subscription_enabled? %}
       <div class="subscribe">
 
@@ -81,6 +79,10 @@
           {% comment %} <a href="{{ site.feed_url }}">Subscribe to the feed</a> {% endcomment %}
       </div>
     {% endif %}
+
+    {{ post | share_buttons }}
+
+
 
 
   </footer>

@@ -575,11 +575,13 @@ main > section.archive {
   width: 34em;
   margin-bottom: 0.75em; }
 
-.posthaven-share-links .posthaven-share-item {
-  display: inline-block;
-  margin-right: 1em; }
-.posthaven-share-links .posthaven-twitter-share {
-  margin-right: 1.33em; }
+.posthaven-share-links {
+  margin: 10px; }
+  .posthaven-share-links .posthaven-share-item {
+    display: inline-block;
+    margin-right: 1em; }
+  .posthaven-share-links .posthaven-twitter-share {
+    margin-right: 1.33em; }
 
 .posthaven-private-form .posthaven-field {
   display: inline-block;
