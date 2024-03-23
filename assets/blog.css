@@ -736,15 +736,7 @@ article header {
       margin: 0;
       padding: 0; }
       body nav ul li {
-        margin-left: 0px; }
-
-  footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    bottom: 0;
-    left: 0;
-    margin: 0 !important;
-    display: flex; } }
+        margin-left: 0px; } }
 ul li {
   list-style-type: disc; }
 
