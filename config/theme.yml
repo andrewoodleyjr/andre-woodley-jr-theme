@@ -26,6 +26,14 @@ settings:
   label: Contact
   default: hello@email.com
   type: text
+- id: copyright_start_date
+  label: Copyright Start Date
+  default: 1990
+  type: text
+- id: copyright_end_date_now
+  label: Copyright End Date Now
+  default: true
+  type: checkbox
 - id: recognition_text
   label: Recongnition Statement
   default: Provide recongnition statement here
