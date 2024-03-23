@@ -921,8 +921,6 @@ body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
   /* Provides ample space inside the input field for easy interaction */
   font-size: 18px;
   /* Increases the font size for better readability */
-  border-radius: 10px;
-  /* Adds rounded corners for a modern look */
   border: 1px solid #ccc;
   /* Defines a subtle border around the input field */
   box-sizing: border-box;
