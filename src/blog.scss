@@ -902,12 +902,20 @@ ul li {
 
 
 @keyframes pulseArrow {
-  0%, 100% {
-    transform: translateY(0) translateX(-50%);
+  0%, 6.667%, 100% {
+    transform: translateY(100%) translateX(-50%);
   }
-  50% {
-    transform: translateY(-10px) translateX(-50%);
+  3.333% {
+    transform: translateY(50%) translateX(-50%);
   }
+  // Repeat these keyframes to make the arrow pulse 5 times
+  13.333%, 20%, 26.667%, 33.333%, 40% {
+    transform: translateY(100%) translateX(-50%);
+  }
+  10%, 16.667%, 23.333%, 30%, 36.667% {
+    transform: translateY(50%) translateX(-50%);
+  }
+  // After the pulses, it stays at the initial position to simulate the pause
 }
 
 .arrow-down {
@@ -917,7 +925,7 @@ ul li {
   transform: translateY(100%) translateX(-50%);
   width: 1.5rem;
   height: 1.5rem;
-  animation: pulseArrow 1s ease-in-out 5 forwards;
+  animation: pulseArrow 14.5s ease-in-out infinite;
 }
 
 /* Subscribe Button */
