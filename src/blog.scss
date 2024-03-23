@@ -940,12 +940,34 @@ ul li {
   text-decoration: none;
   font-family: Arial, sans-serif;
   font-size: 12px;
-  border-radius: 3px;
+  font-weight: bold;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
   top: -1px;
   position: relative;
+}
+
+body.dark-mode .posthaven-anon.posthaven-subscribe-prompt::before {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  top: 5px; /* Offset down */
+  right: -5px; /* Offset to the left (negative value) */
+  bottom: -5px; /* Offset up (negative value) */
+  left: 5px; /* Offset to the right */
+  background-color: var(--bg-color); /* Background color */
+  z-index: -1; /* Ensures the background is behind the text */
+}
+
+.posthaven-anon.posthaven-subscribe-prompt::before {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  top: 4px; /* Offset down */
+  right: -4px; /* Offset to the left (negative value) */
+  bottom: -4px; /* Offset up (negative value) */
+  left: 4px; /* Offset to the right */
+  background-color: var(--bg-color-dark); /* Background color */
+  z-index: -1; /* Ensures the background is behind the text */
 }
 
 
