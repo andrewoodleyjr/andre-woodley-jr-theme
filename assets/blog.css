@@ -548,6 +548,9 @@ main > section.archive {
 .private-password main p {
   margin-bottom: 0.5em; }
 
+.posthaven-share-links {
+  display: inline-block; }
+
 .posthaven-comment-form .posthaven-field {
   margin: 0.75em 0; }
   .posthaven-comment-form .posthaven-field label {
