@@ -1,6 +1,12 @@
 <section class="home centered-content">
-  <h1>{{ settings.headline }}</h1>
-  <p>{{ settings.subheadline }}</p>
+  {% if settings.recent_post_in_header %}
+    {% assign recent_post = posts.first %}
+    <h1><a href="{{ recent_post.url }}">{{ recent_post.title }}</a></h1>
+    <p><a href="{{ recent_post.url }}">Read my lastest post</a></p>
+  {% else %}
+    <h1>{{ settings.headline }}</h1>
+    <p>{{ settings.subheadline }}</p>
+  {% endif %}
   <img
     src="{{ 'svgs/down-arrow.svg' | asset_url }}"
     alt="Arrow pointing down"
