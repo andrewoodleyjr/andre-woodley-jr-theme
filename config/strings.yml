@@ -116,7 +116,7 @@ relative_date:
   yesterday: 'yesterday'
   tomorrow: 'tomorrow'
   days: 'days'
-  one_week: 'a week'
+  one_week: 'about a week ago, week'
   weeks: 'weeks'
   one_month: 'a month'
   months: 'months'
