@@ -62,7 +62,7 @@ date:
 # Forms
 forms:
   archive:
-    query_placeholder: Search what we are really talking about...
+    query_placeholder: Search
   comment:
     anon_error: Please enter your name and email.
     comment_button: Comment
