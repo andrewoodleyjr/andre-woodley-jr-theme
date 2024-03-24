@@ -1014,7 +1014,7 @@ body.dark-mode .posthaven-anon.posthaven-subscribe-prompt {
   width: 100%; /* Ensures the input field fills the width of its container */
   padding: 10px; /* Adds space inside the field, making it taller and easier to interact with */
   font-size: 16px; /* Sets a comfortable reading size for the text entered */
-  border-radius: 5px; /* Rounds the corners of the input field */
+  // border-radius: 5px; /* Rounds the corners of the input field */
   border: 1px solid #ccc; /* Adds a subtle border to the field */
   box-sizing: border-box; /* Includes padding and border in the field's total width and height */
 }
@@ -1022,7 +1022,7 @@ body.dark-mode .posthaven-anon.posthaven-subscribe-prompt {
 .posthaven-subscribe-anon input[type="submit"] {
   padding: 10px 20px; /* Adds space inside the button, making it wider and taller */
   font-size: 16px; /* Ensures the text on the button is easily readable */
-  border-radius: 5px; /* Rounds the corners of the submit button */
+  // border-radius: 5px; /* Rounds the corners of the submit button */
   border: none; /* Removes the default border */
   background-color: var(--bg-color-dark); /* Uses CSS variable for the background color */
   color: var(--bg-color); /* Uses CSS variable for the text color */
@@ -1041,12 +1041,86 @@ body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
   opacity: 0.9; /* Slightly reduces opacity on hover */
 }
 
+.posthaven-subscribe-anon input[type="submit"] {
+  display: inline-block;
+  // padding: 3px 14px;
+  background-color: var(--bg-color-dark);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  // font-size: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  // transition: background-color 0.3s ease;
+  top: -1px;
+  position: relative;
+}
+
+body.dark-mode .posthaven-subscribe-anon input[type="submit"]::before {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  top: 5px; /* Offset down */
+  right: -5px; /* Offset to the left (negative value) */
+  bottom: -5px; /* Offset up (negative value) */
+  left: 5px; /* Offset to the right */
+  background-color: var(--bg-color); /* Background color */
+  z-index: -1; /* Ensures the background is behind the text */
+}
+
+.posthaven-subscribe-anon input[type="submit"]::before {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  top: 4px; /* Offset down */
+  right: -4px; /* Offset to the left (negative value) */
+  bottom: -4px; /* Offset up (negative value) */
+  left: 4px; /* Offset to the right */
+  background-color: var(--bg-color-dark); /* Background color */
+  z-index: -1; /* Ensures the background is behind the text */
+}
+
+
+body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
+  background-color: var(--bg-color);
+  color: var(--bg-color-dark);
+}
+
+// Try
+
+.posthaven-subscribe-anon input[type="submit"] {
+  position: relative;
+  padding: 18px 10px 10px;
+  background-color: var(--bg-color-dark);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  box-shadow: 8px 8px 0 var(--bg-color-dark);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
+  background-color: var(--bg-color);
+  color: var(--bg-color-dark);
+  box-shadow: 8px 8px 0 var(--bg-color);
+}
+
+.posthaven-subscribe-anon input[type="submit"]:hover {
+  box-shadow: 8px 8px 0 var(--bg-color-dark);
+}
+
+body.dark-mode .posthaven-subscribe-anon input[type="submit"]:hover {
+  box-shadow: 8px 8px 0 var(--bg-color);
+}
+
+
+// End Try
+
 /* Archive Results */
 .archive-entry {
   list-style-type: none;
 }
 
-.posthaven-archive-form input[type="text"] {
+.posthaven-archive-form input[type="text"], .posthaven-subscribe-anon input[type="text"] {
   width: 100%; /* Ensures the input field uses the full width available */
   padding: 15px 20px; /* Provides ample space inside the input field for easy interaction */
   font-size: 18px; /* Increases the font size for better readability */
@@ -1057,7 +1131,7 @@ body.dark-mode .posthaven-subscribe-anon input[type="submit"] {
   color: var(--bg-color-dark)
 }
 
-body.dark-mode .posthaven-archive-form input[type="text"] {
+body.dark-mode .posthaven-archive-form input[type="text"], body.dark-mode .posthaven-subscribe-anon input[type="text"] {
   background-color: var(--bg-color-dark) !important; /* A light background color to distinguish the input field */
   color: var(--bg-color) !important;
 }
@@ -1087,6 +1161,7 @@ a.home-post-button {
   background-color: var(--bg-color-dark); /* Dark mode background color */
   color: var(--bg-color); /* Dark mode text color */
   position: relative; /* Needed for offsetting the background */
+  font-weight: bolder;
 }
 
 /* Visited state */
