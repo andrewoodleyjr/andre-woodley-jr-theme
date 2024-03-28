@@ -1095,3 +1095,17 @@ body.dark-mode a.home-post-button, body.dark-mode a.home-post-button:visited {
   /* Dark mode background color */
   color: var(--bg-color-dark) !important;
   /* Dark mode text color */ }
+
+.no-borders {
+  border-collapse: collapse;
+  border: none !important; }
+
+.no-borders th, .no-borders td, .no-borders tr {
+  border: none !important; }
+
+.no-borders td, td {
+  padding-right: 10px !important;
+  white-space: nowrap; }
+
+td.bold {
+  font-weight: bolder !important; }
