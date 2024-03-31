@@ -190,6 +190,7 @@ body > footer {
   align-items: center;
   justify-content: space-between;
   display: flex;
+  margin-top: 50px;
 
   p.paragraph {
     font-size: 12px;
@@ -259,6 +260,15 @@ section.dated {
 // ----------------------------------------------------------
 // Posts
 // ----------------------------------------------------------
+
+article.page header {
+  display: none;
+}
+
+article.page section {
+  top: 10vh;
+  position: relative;
+}
 
 article.post, article.page {
   max-width: 100%;
@@ -1219,3 +1229,19 @@ body.dark-mode a.home-post-button, body.dark-mode a.home-post-button:visited {
 }
 
 
+.no-borders {
+  border-collapse: collapse;
+  border: none !important;
+}
+.no-borders th, .no-borders td, .no-borders tr {
+  border: none !important;
+}
+
+.no-borders td, td {
+  padding-right: 10px !important;
+  white-space: nowrap;
+}
+
+td.bold {
+  font-weight: bolder !important;
+}
