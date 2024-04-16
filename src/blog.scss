@@ -1245,3 +1245,8 @@ body.dark-mode a.home-post-button, body.dark-mode a.home-post-button:visited {
 td.bold {
   font-weight: bolder !important;
 }
+
+table {
+  display: flex;
+    margin-bottom: 10vh;
+}
